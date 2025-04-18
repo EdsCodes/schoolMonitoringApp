@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# schoolMonitoringApp
+Full-featured Student Management System built with Next.js and TypeScript. Includes CRUD operations for students, courses, teachers, and enrollments, with a modular architecture and responsive UI.
 
-## Getting Started
+📚 Student Management System
+This project is a comprehensive Student Management System built with a modular and scalable architecture. It implements full CRUD (Create, Read, Update, Delete) operations for managing students, courses, teachers, and enrollments.
 
-First, run the development server:
+🔍 Project Overview
+The application allows administrators to:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Register, view, update, and delete students
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Manage course information and availability
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Add, edit, or remove teachers
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Enroll students in courses and track enrollment data
 
-## Learn More
+Each module is interconnected, ensuring data consistency and a seamless user experience. For example, enrollments depend on existing students, courses, and teachers, allowing for a real-world academic structure.
 
-To learn more about Next.js, take a look at the following resources:
+🛠️ Technologies Used
+Angular with Angular Material (or React, if applicable)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+TypeScript
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+RxJS
 
-## Deploy on Vercel
+State management (NgRx if used)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Responsive UI with PrimeFlex / Tailwind CSS (adjust depending on your stack)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+✅ Key Features
+Fully functional CRUD operations for all entities
+
+User-friendly interface with forms and validations
+
+Modular component-based architecture
+
+Reactive forms and observable-based data flow
+
+Dialogs and notifications for enhanced UX
