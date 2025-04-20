@@ -1,18 +1,17 @@
 import React from "react";
 
 const students = [
-  { id: 1, name: "John Doe", age: 16, grade: "10th" },
-  { id: 2, name: "Jane Smith", age: 17, grade: "11th" },
-  { id: 3, name: "Sam Wilson", age: 15, grade: "9th" },
-  { id: 4, name: "Emily Johnson", age: 16, grade: "10th" },
+  { id: 1, name: "John Doe", age: 16, course: "10th" },
+  { id: 2, name: "Jane Smith", age: 17, course: "11th" },
+  { id: 3, name: "Sam Wilson", age: 15, course: "9th" },
+  { id: 4, name: "Emily Johnson", age: 16, course: "10th" },
 ];
 
 const StudentsPage: React.FC = () => {
   return (
     <div className="flex min-h-screen">
-
       <main className="flex-1 p-8">
-        <h1 className="text-4xl font-extrabold text-white mb-8 text-center">
+        <h1 className="text-3xl font-extrabold text-white mb-8 text-center">
           Students List
         </h1>
 
@@ -23,7 +22,7 @@ const StudentsPage: React.FC = () => {
                 <th className="px-8 py-4 text-left">ID</th>
                 <th className="px-8 py-4 text-left">Name</th>
                 <th className="px-8 py-4 text-left">Age</th>
-                <th className="px-8 py-4 text-left">Grade</th>
+                <th className="px-8 py-4 text-left">Course</th>
               </tr>
             </thead>
             <tbody>
@@ -37,7 +36,7 @@ const StudentsPage: React.FC = () => {
                   <td className="px-8 py-4">{student.id}</td>
                   <td className="px-8 py-4">{student.name}</td>
                   <td className="px-8 py-4">{student.age}</td>
-                  <td className="px-8 py-4">{student.grade}</td>
+                  <td className="px-8 py-4">{student.course}</td>
                 </tr>
               ))}
             </tbody>
