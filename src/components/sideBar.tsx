@@ -20,7 +20,8 @@ function SideBar() {
             {isOpen && (
                 <div className="flex flex-col gap-4 p-4">
                     <nav className="flex flex-col gap-4 items-start mt-10">
-                        <a href="#" className="text-lg mt-10 bg-gray-50 text-black font-bold py-2 px-4 rounded shadow-md hover:shadow-lg active:scale-95 transition rounded-lg min-w-full text-center hover:bg-blue-400 hover:shadow-lg hover:-translate-y-0.5 hover:border-blue-800">Students</a>
+                        <a href="#" className="text-lg mt-10 bg-gray-50 text-black font-bold py-2 px-4 rounded shadow-md hover:bg-blue-400 hover:shadow-lg active:scale-95 transition rounded-lg min-w-full text-center  hover:shadow-lg hover:-translate-y-0.5 hover:border-blue-800">Home page</a>
+                        <a href="#" className="text-lg mt-10 bg-gray-50 text-black font-bold py-2 px-4 rounded shadow-md hover:bg-blue-400 hover:shadow-lg active:scale-95 transition rounded-lg min-w-full text-center  hover:shadow-lg hover:-translate-y-0.5 hover:border-blue-800">Students</a>
                         <a href="#" className="text-lg mt-10 bg-gray-50 text-black font-bold py-2 px-4 rounded shadow-md hover:shadow-lg active:scale-95 transition rounded-lg min-w-full text-center hover:bg-blue-400 hover:shadow-lg hover:-translate-y-0.5 hover:border-blue-800">Teachers</a>
                         <a href="#" className="text-lg mt-10 bg-gray-50 text-black font-bold py-2 px-4 rounded shadow-md hover:shadow-lg active:scale-95 transition rounded-lg min-w-full text-center hover:bg-blue-400 hover:shadow-lg hover:-translate-y-0.5 hover:border-blue-800">Courses</a>
                         <a href="#" className="text-lg mt-10 bg-gray-50 text-black font-bold py-2 px-4 rounded shadow-md hover:shadow-lg active:scale-95 transition rounded-lg min-w-full text-center hover:bg-blue-400 hover:shadow-lg hover:-translate-y-0.5 hover:border-blue-800">Inscriptions</a>
