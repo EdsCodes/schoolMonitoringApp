@@ -1,17 +1,12 @@
-'use client';
-
+import { getStudentById } from "@/modules/studentsModule";
 import React from "react";
-import { Student } from "../../modules/studentsModule";
-import { studentList } from "../../modules/studentsModule";
 
 type Params = {
-  params: { 
-    id: string;
-  };
+  params: { id: string };
 };
 
-export default function StudentsDetailed({ params }: Params) {
-  const student = studentList.find((s: Student) => s.id === params.id);
+export default function StudentDetailedPage({ params }: Params) {
+  const student = getStudentById(params.id);
 
   if (!student) {
     return (
@@ -23,13 +18,13 @@ export default function StudentsDetailed({ params }: Params) {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
-      <h1 className="text-2xl font-bold text-gray-800 mb-4">Student Detailed Page</h1>
+      <h1 className="text-2xl font-bold text-gray-800 mb-4">Detalles del Estudiante</h1>
       <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
         <h2 className="text-xl font-semibold text-gray-700 mb-2">{student.name}</h2>
-        <p className="text-gray-600"><strong>Age:</strong> {student.age}</p>
-        <p className="text-gray-600"><strong>Course:</strong> {student.course}</p>
+        <p className="text-gray-600"><strong>Edad:</strong> {student.age}</p>
+        <p className="text-gray-600"><strong>Grado:</strong> {student.course}</p>
         <p className="text-gray-600"><strong>Email:</strong> {student.email}</p>
-        <p className="text-gray-600"><strong>Address:</strong> {student.address}</p>
+        <p className="text-gray-600"><strong>Dirección:</strong> {student.address}</p>
       </div>
     </div>
   );

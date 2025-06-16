@@ -11,7 +11,7 @@ export default function HomePage() {
       <Inicio />
       <StudentsPage />
       <StudentForm />
-      <StudentsDetailed />
+      <StudentsDetailed params={{ id: "some-id" }} />
     </div>
   );
 }
