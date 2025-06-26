@@ -17,7 +17,7 @@ export default function StudentsDetailed({ params }: Props) {
   if (!student) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <p className="text-red-500 font-semibold text-lg">Estudiante no encontrado.</p>
+        <p className="text-red-500 font-semibold text-lg">Student not found.</p>
       </div>
     );
   }
