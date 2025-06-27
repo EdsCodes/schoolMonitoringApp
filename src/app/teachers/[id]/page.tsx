@@ -29,6 +29,7 @@ export default function teachersDetailed({ params }: Props) {
         <p className="text-gray-600"><strong>Age:</strong> {teacher.age}</p>
         <p className="text-gray-600"><strong>Email:</strong> {teacher.email}</p>
         <p className="text-gray-600"><strong>Address:</strong> {teacher.address}</p>
+        <p className="text-gray-600"><strong>Course Asigned:</strong> {teacher.courseAsigned}</p>
       </div>
     </div>
   );

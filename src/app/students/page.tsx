@@ -22,9 +22,9 @@ function StudentsPage() {
                 <th className="px-4 py-2 text-left">ID</th>
                 <th className="px-4 py-2 text-left">Name</th>
                 <th className="px-4 py-2 text-left">Age</th>
-                <th className="px-4 py-2 text-left">Course</th>
                 <th className="px-4 py-2 text-left">Email</th>
                 <th className="px-4 py-2 text-left">Address</th>
+                <th className="px-4 py-2 text-left">Course</th>
               </tr>
             </thead>
             <tbody>
@@ -39,9 +39,9 @@ function StudentsPage() {
                   <td className="px-4 py-3">{student.id}</td>
                   <td className="px-4 py-3">{student.name}</td>
                   <td className="px-4 py-3">{student.age}</td>
-                  <td className="px-4 py-3">{student.course}</td>
                   <td className="px-4 py-3">{student.email}</td>
                   <td className="px-4 py-3">{student.address}</td>
+                  <td className="px-4 py-3">{student.course}</td>
                 </tr>
               ))}
             </tbody>

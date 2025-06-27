@@ -12,17 +12,17 @@ export const studentList: Student[] = [
     id: '1',
     name: 'John Doe',
     age: 16,
-    course: '10th',
     email: 'john.doe@example.com',
     address: '123 Main St, Springfield',
+    course: 'physics',
   },
   {
     id: '2',
     name: 'Ana Smith',
     age: 17,
-    course: '11th',
     email: 'ana.smith@example.com',
     address: '456 Elm St, Springfield',
+    course: 'mathematics',
   },
 ];
 

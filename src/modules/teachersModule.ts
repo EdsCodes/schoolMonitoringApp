@@ -4,6 +4,7 @@ export type Teacher = {
   age: number;
   email: string;
   address: string;
+  courseAsigned?: string;
 };
 
 export const teacherList: Teacher[] = [
@@ -13,6 +14,7 @@ export const teacherList: Teacher[] = [
     age: 36,
     email: 'george.kelvin@example.com',
     address: '654 Second St, Springfield',
+    courseAsigned: 'Mathematics', 
   },
   {
     id: '2',
@@ -20,6 +22,7 @@ export const teacherList: Teacher[] = [
     age: 27,
     email: 'john.klein@example.com',
     address: '458 ork street, Springfield',
+    courseAsigned: 'Physics',
   },
 ];
 

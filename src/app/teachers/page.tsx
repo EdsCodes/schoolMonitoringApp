@@ -22,9 +22,9 @@ function teachersPage() {
                 <th className="px-4 py-2 text-left">ID</th>
                 <th className="px-4 py-2 text-left">Name</th>
                 <th className="px-4 py-2 text-left">Age</th>
-                <th className="px-4 py-2 text-left">Course</th>
                 <th className="px-4 py-2 text-left">Email</th>
                 <th className="px-4 py-2 text-left">Address</th>
+                <th className="px-4 py-2 text-left">Course Asigned</th>
               </tr>
             </thead>
             <tbody>
@@ -41,6 +41,7 @@ function teachersPage() {
                   <td className="px-4 py-3">{teacher.age}</td>
                   <td className="px-4 py-3">{teacher.email}</td>
                   <td className="px-4 py-3">{teacher.address}</td>
+                  <td className="px-4 py-3">{teacher.courseAsigned}</td>
                 </tr>
               ))}
             </tbody>

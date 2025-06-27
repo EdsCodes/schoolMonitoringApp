@@ -28,9 +28,9 @@ export default function StudentsDetailed({ params }: Props) {
       <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
         <h2 className="text-xl font-semibold text-gray-700 mb-2">{student.name}</h2>
         <p className="text-gray-600"><strong>Age:</strong> {student.age}</p>
-        <p className="text-gray-600"><strong>Course:</strong> {student.course}</p>
         <p className="text-gray-600"><strong>Email:</strong> {student.email}</p>
         <p className="text-gray-600"><strong>Address:</strong> {student.address}</p>
+        <p className="text-gray-600"><strong>Course:</strong> {student.course}</p>
       </div>
     </div>
   );
