@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { courseList } from "@/modules/coursesModule";
 import { teacherList } from "@/modules/teachersModule";
+import { studentList } from "@/modules/studentsModule";
 
 function CoursesPage() {
   const router = useRouter();
@@ -17,40 +18,42 @@ function CoursesPage() {
         </h1>
 
         <div className="w-full bg-white shadow-xl rounded-lg overflow-x-auto p-4">
-          <table className="table-auto min-w-max w-full border-collapse">
-            <thead className="text-lg text-gray-700 bg-gray-200">
-              <tr>
-                <th className="px-4 py-2 text-left">ID</th>
-                <th className="px-4 py-2 text-left">Course Name</th>
-                <th className="px-4 py-2 text-left"># Students</th>
-                <th className="px-4 py-2 text-left">Start Date</th>
-                <th className="px-4 py-2 text-left">End Date</th>
-                <th className="px-4 py-2 text-left">Teacher</th>
+          <div className="max-h-[500px] overflow-y-auto">
+            <table className="table-auto min-w-max w-full border-collapse">
+              <thead className="text-lg text-gray-700 bg-gray-200">
+          <tr>
+            <th className="px-4 py-2 text-left">ID</th>
+            <th className="px-4 py-2 text-left">Course Name</th>
+            <th className="px-4 py-2 text-left"># Students</th>
+            <th className="px-4 py-2 text-left">Start Date</th>
+            <th className="px-4 py-2 text-left">End Date</th>
+            <th className="px-4 py-2 text-left">Teacher</th>
+          </tr>
+              </thead>
+              <tbody>
+          {courseList.map((course, idx) => {
+            const teacher = teacherList.find((t) => t.id === course.teacherId);
+            
+            return (
+              <tr
+                key={course.id}
+                className={`${
+            idx % 2 === 0 ? "bg-gray-50" : "bg-white"
+                } text-black hover:bg-gray-100 cursor-pointer transition duration-150`}
+                onClick={() => router.push(`/courses/${course.id}`)}
+              >
+                <td className="px-4 py-3">{course.id}</td>
+                <td className="px-4 py-3">{course.name}</td>
+                <td className="px-4 py-3">{course.enrolledStudents?.length || 0}</td>
+                <td className="px-4 py-3">{course.startDate}</td>
+                <td className="px-4 py-3">{course.endDate}</td>
+                <td className="px-4 py-3">{teacher?.name || "N/A"}</td>
               </tr>
-            </thead>
-            <tbody>
-              {courseList.map((course, idx) => {
-                const teacher = teacherList.find((t) => t.id === course.id);
-
-                return (
-                  <tr
-                    key={course.id}
-                    className={`${
-                      idx % 2 === 0 ? "bg-gray-50" : "bg-white"
-                    } text-black hover:bg-gray-100 cursor-pointer transition duration-150`}
-                    onClick={() => router.push(`/courses/${course.id}`)}
-                  >
-                    <td className="px-4 py-3">{course.id}</td>
-                    <td className="px-4 py-3">{course.name}</td>
-                    <td className="px-4 py-3">{course.enrolledStudents?.length || 0}</td>
-                    <td className="px-4 py-3">{course.startDate}</td>
-                    <td className="px-4 py-3">{course.endDate}</td>
-                    <td className="px-4 py-3">{teacher?.name || "N/A"}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+            );
+          })}
+              </tbody>
+            </table>
+          </div>
 
           <div className="mt-6 text-center">
             <Link href="/courseForm">

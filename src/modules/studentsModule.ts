@@ -24,6 +24,38 @@ export const studentList: Student[] = [
     address: '456 Elm St, Springfield',
     course: 'mathematics',
   },
+  {
+    id: '3',
+    name: 'George Castro',
+    age: 17,
+    email: 'ana.smith@example.com',
+    address: '456 Elm St, Springfield',
+    course: 'mathematics',
+  },
+  {
+    id: '4',
+    name: 'John Wick',
+    age: 17,
+    email: 'ana.smith@example.com',
+    address: '456 Elm St, Springfield',
+    course: 'mathematics',
+  },
+  {
+    id: '5',
+    name: 'Joseph Doe',
+    age: 17,
+    email: 'ana.smith@example.com',
+    address: '456 Elm St, Springfield',
+    course: 'mathematics',
+  },
+  {
+    id: '6',
+    name: 'Mary Roberts',
+    age: 17,
+    email: 'ana.smith@example.com',
+    address: '456 Elm St, Springfield',
+    course: 'mathematics',
+  },
 ];
 
 export const getStudentById = (id: string): Student | undefined =>
