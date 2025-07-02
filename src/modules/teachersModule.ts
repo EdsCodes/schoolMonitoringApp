@@ -5,6 +5,7 @@ export type Teacher = {
   email: string;
   address: string;
   courseAsigned?: string;
+  phoneNumber?: string; 
 };
 
 export const teacherList: Teacher[] = [
@@ -15,6 +16,7 @@ export const teacherList: Teacher[] = [
     email: 'george.kelvin@example.com',
     address: '654 Second St, Springfield',
     courseAsigned: 'Mathematics', 
+    phoneNumber: '987-654-3210',
   },
   {
     id: '2',
@@ -22,7 +24,8 @@ export const teacherList: Teacher[] = [
     age: 27,
     email: 'john.klein@example.com',
     address: '458 ork street, Springfield',
-    courseAsigned: 'Physics',
+    courseAsigned: 'Mathematics', 
+    phoneNumber: '987-654-3210',
   },
 ];
 

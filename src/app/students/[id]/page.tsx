@@ -31,6 +31,7 @@ export default function StudentsDetailed({ params }: Props) {
         <p className="text-gray-600"><strong>Email:</strong> {student.email}</p>
         <p className="text-gray-600"><strong>Address:</strong> {student.address}</p>
         <p className="text-gray-600"><strong>Course:</strong> {student.course}</p>
+        <p className="text-gray-600"><strong>Phone Number:</strong> {student.phoneNumber}</p>
       </div>
     </div>
   );

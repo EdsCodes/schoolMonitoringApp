@@ -25,6 +25,7 @@ function StudentsPage() {
                 <th className="px-4 py-2 text-left">Email</th>
                 <th className="px-4 py-2 text-left">Address</th>
                 <th className="px-4 py-2 text-left">Course</th>
+                <th className="px-4 py-2 text-left">Phone Number</th>
               </tr>
             </thead>
             <tbody>
@@ -42,6 +43,7 @@ function StudentsPage() {
                   <td className="px-4 py-3">{student.email}</td>
                   <td className="px-4 py-3">{student.address}</td>
                   <td className="px-4 py-3">{student.course}</td>
+                  <td className="px-4 py-3">{student.phoneNumber}</td>
                 </tr>
               ))}
             </tbody>

@@ -25,6 +25,7 @@ function teachersPage() {
                 <th className="px-4 py-2 text-left">Email</th>
                 <th className="px-4 py-2 text-left">Address</th>
                 <th className="px-4 py-2 text-left">Course Asigned</th>
+                <th className="px-4 py-2 text-left">Phone Number</th>
               </tr>
             </thead>
             <tbody>
@@ -42,6 +43,7 @@ function teachersPage() {
                   <td className="px-4 py-3">{teacher.email}</td>
                   <td className="px-4 py-3">{teacher.address}</td>
                   <td className="px-4 py-3">{teacher.courseAsigned}</td>
+                  <td className="px-4 py-3">{teacher.phoneNumber}</td>
                 </tr>
               ))}
             </tbody>

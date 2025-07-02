@@ -5,6 +5,7 @@ export type Student = {
   course: string;
   email: string;
   address: string;
+  phoneNumber?: string;
 };
 
 export const studentList: Student[] = [
@@ -15,6 +16,7 @@ export const studentList: Student[] = [
     email: 'john.doe@example.com',
     address: '123 Main St, Springfield',
     course: 'physics',
+    phoneNumber: '123-456-7890',
   },
   {
     id: '2',
@@ -23,6 +25,7 @@ export const studentList: Student[] = [
     email: 'ana.smith@example.com',
     address: '456 Elm St, Springfield',
     course: 'mathematics',
+    phoneNumber: '123-456-7890',
   },
   {
     id: '3',
@@ -31,6 +34,7 @@ export const studentList: Student[] = [
     email: 'ana.smith@example.com',
     address: '456 Elm St, Springfield',
     course: 'mathematics',
+    phoneNumber: '123-456-7890',
   },
   {
     id: '4',
@@ -38,7 +42,8 @@ export const studentList: Student[] = [
     age: 17,
     email: 'ana.smith@example.com',
     address: '456 Elm St, Springfield',
-    course: 'mathematics',
+    course: 'pshysics',
+    phoneNumber: '123-456-7890',
   },
   {
     id: '5',
@@ -47,6 +52,7 @@ export const studentList: Student[] = [
     email: 'ana.smith@example.com',
     address: '456 Elm St, Springfield',
     course: 'mathematics',
+    phoneNumber: '123-456-7890',
   },
   {
     id: '6',
@@ -54,7 +60,8 @@ export const studentList: Student[] = [
     age: 17,
     email: 'ana.smith@example.com',
     address: '456 Elm St, Springfield',
-    course: 'mathematics',
+    course: 'pshysics',
+    phoneNumber: '123-456-7890',
   },
 ];
 

@@ -10,6 +10,16 @@ export interface Enrollments {
     course: string; 
     email: string;
     address: string;
+    phoneNumber?: string;
+  };
+  Teacher: {
+    id: string;
+    name: string;
+    age: number;
+    email: string;
+    address: string;
+    courseAsigned?: string;
+    phoneNumber?: string; 
   };
   course: {
     id: string;
