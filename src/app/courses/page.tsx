@@ -46,22 +46,25 @@ const CoursesPage: React.FC = () => {
   return (
     <div className="flex min-h-screen bg-gray-100">
       <main className="flex-1 p-8">
+        {/* Title */}
         <h1 className="text-3xl font-extrabold text-gray-800 mb-8 text-center">
           Courses List
         </h1>
 
-        <div className="w-full bg-white shadow-xl rounded-lg overflow-x-auto p-4">
+        {/* Table Container */}
+        <section className="w-full bg-white shadow-xl rounded-lg p-4">
+          {/* Scrollable Table */}
           <div className="max-h-[500px] overflow-y-auto">
-            <table className="table-auto min-w-max w-full border-collapse">
-              <thead className="text-lg text-gray-700 bg-gray-200">
+            <table className="table-auto w-full border-collapse text-sm">
+              <thead className="text-gray-700 bg-gray-200">
                 <tr>
-                  <th className="px-4 py-2 text-left">ID</th>
-                  <th className="px-4 py-2 text-left">Course Name</th>
-                  <th className="px-4 py-2 text-left"># Students</th>
-                  <th className="px-4 py-2 text-left">Start Date</th>
-                  <th className="px-4 py-2 text-left">End Date</th>
-                  <th className="px-4 py-2 text-left">Teacher</th>
-                  <th className="px-4 py-2 text-left">Actions</th>
+                  <th className="px-3 py-2 text-left">ID</th>
+                  <th className="px-3 py-2 text-left">Course Name</th>
+                  <th className="px-3 py-2 text-left"># Students</th>
+                  <th className="px-3 py-2 text-left">Start Date</th>
+                  <th className="px-3 py-2 text-left">End Date</th>
+                  <th className="px-3 py-2 text-left">Teacher</th>
+                  <th className="px-3 py-2 text-left">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -70,18 +73,23 @@ const CoursesPage: React.FC = () => {
                   return (
                     <tr
                       key={course.id}
-                      className={`$ {
+                      className={`${
                         idx % 2 === 0 ? "bg-gray-50" : "bg-white"
                       } text-black hover:bg-gray-100 transition duration-150 cursor-pointer`}
                       onClick={() => router.push(`/courses/${course.id}`)}
                     >
-                      <td className="px-4 py-3">{course.id}</td>
-                      <td className="px-4 py-3">{course.name}</td>
-                      <td className="px-4 py-3">{course.enrolledStudents.length}</td>
-                      <td className="px-4 py-3">{course.startDate}</td>
-                      <td className="px-4 py-3">{course.endDate}</td>
-                      <td className="px-4 py-3">{teacher?.name || "N/A"}</td>
-                      <td className="px-4 py-3 flex gap-3" onClick={(e) => e.stopPropagation()}>
+                      <td className="px-3 py-2 break-words whitespace-normal">{course.id}</td>
+                      <td className="px-3 py-2 break-words whitespace-normal">{course.name}</td>
+                      <td className="px-3 py-2">{course.enrolledStudents.length}</td>
+                      <td className="px-3 py-2">{course.startDate}</td>
+                      <td className="px-3 py-2">{course.endDate}</td>
+                      <td className="px-3 py-2 break-words whitespace-normal">
+                        {teacher?.name || "N/A"}
+                      </td>
+                      <td
+                        className="px-3 py-2 flex gap-2"
+                        onClick={(e) => e.stopPropagation()}
+                      >
                         <button
                           onClick={() => handleEdit(course)}
                           className="text-blue-600 hover:underline"
@@ -102,6 +110,7 @@ const CoursesPage: React.FC = () => {
             </table>
           </div>
 
+          {/* Add New Course */}
           <div className="mt-6 text-center">
             <button
               onClick={handleAddClick}
@@ -110,8 +119,9 @@ const CoursesPage: React.FC = () => {
               Add New Course
             </button>
           </div>
-        </div>
+        </section>
 
+        {/* Modal */}
         {isModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
             <CourseForm onClose={handleModalClose} courseToEdit={editingCourse ?? undefined} />

@@ -31,7 +31,7 @@ export const studentList: Student[] = [
     id: '3',
     name: 'George Castro',
     age: 17,
-    email: 'ana.smith@example.com',
+    email: 'george.castro@example.com',
     address: '456 Elm St, Springfield',
     course: 'mathematics',
     phoneNumber: '123-456-7890',
@@ -40,16 +40,16 @@ export const studentList: Student[] = [
     id: '4',
     name: 'John Wick',
     age: 17,
-    email: 'ana.smith@example.com',
+    email: 'john.wick@example.com',
     address: '456 Elm St, Springfield',
-    course: 'pshysics',
+    course: 'physics',
     phoneNumber: '123-456-7890',
   },
   {
     id: '5',
     name: 'Joseph Doe',
     age: 17,
-    email: 'ana.smith@example.com',
+    email: 'joseph.doe@example.com',
     address: '456 Elm St, Springfield',
     course: 'mathematics',
     phoneNumber: '123-456-7890',
@@ -58,12 +58,35 @@ export const studentList: Student[] = [
     id: '6',
     name: 'Mary Roberts',
     age: 17,
-    email: 'ana.smith@example.com',
+    email: 'mary.roberts@example.com',
     address: '456 Elm St, Springfield',
-    course: 'pshysics',
+    course: 'physics',
     phoneNumber: '123-456-7890',
   },
 ];
 
 export const getStudentById = (id: string): Student | undefined =>
   studentList.find((s) => s.id === id);
+
+export const addStudent = (student: Student): void => {
+  studentList.push(student);
+};
+
+export const editStudent = (updated: Student): boolean => {
+  const index = studentList.findIndex((s) => s.id === updated.id);
+  if (index !== -1) {
+    studentList[index] = updated;
+    return true;
+  }
+  return false;
+};
+
+export const deleteStudent = (id: string): boolean => {
+  const index = studentList.findIndex((s) => s.id === id);
+  if (index !== -1) {
+    studentList.splice(index, 1);
+    return true;
+  }
+  return false;
+};
+
