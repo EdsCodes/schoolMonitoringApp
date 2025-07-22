@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Student, addStudent, editStudent, deleteStudent } from "@/modules/studentsModule";
+import { courseList } from "@/modules/coursesModule"; // Asegúrate que exista
 
 interface Props {
   onClose: () => void;
@@ -13,7 +14,7 @@ const StudentForm: React.FC<Props> = ({ onClose, studentToEdit }) => {
   const [age, setAge] = useState<number>(0);
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
-  const [course, setCourse] = useState("");
+  const [selectedCourses, setSelectedCourses] = useState<string[]>([]);
   const [phoneNumber, setPhoneNumber] = useState("");
 
   useEffect(() => {
@@ -22,13 +23,21 @@ const StudentForm: React.FC<Props> = ({ onClose, studentToEdit }) => {
       setAge(studentToEdit.age);
       setEmail(studentToEdit.email);
       setAddress(studentToEdit.address);
-      setCourse(studentToEdit.course);
+      setSelectedCourses(studentToEdit.course ?? []);
       setPhoneNumber(studentToEdit.phoneNumber ?? "");
     }
   }, [studentToEdit]);
 
   const generateShortId = () =>
     Math.random().toString(36).substring(2, 6).toUpperCase();
+
+  const handleToggleCourse = (courseId: string) => {
+    setSelectedCourses((prev) =>
+      prev.includes(courseId)
+        ? prev.filter((id) => id !== courseId)
+        : [...prev, courseId]
+    );
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,7 +48,7 @@ const StudentForm: React.FC<Props> = ({ onClose, studentToEdit }) => {
       age,
       email,
       address,
-      course,
+      course: selectedCourses,
       phoneNumber: phoneNumber || undefined,
     };
 
@@ -115,16 +124,21 @@ const StudentForm: React.FC<Props> = ({ onClose, studentToEdit }) => {
           />
         </label>
 
-        {/* Course */}
+        {/* Courses as checkboxes */}
         <label className="block">
-          <span className="text-gray-700 text-sm font-medium">Course</span>
-          <input
-            type="text"
-            className="w-full border border-gray-300 rounded px-4 py-2 mt-1"
-            value={course}
-            onChange={(e) => setCourse(e.target.value)}
-            required
-          />
+          <span className="text-gray-700 text-sm font-medium">Enroll in Courses</span>
+          <div className="flex flex-col gap-1 mt-2 max-h-32 overflow-y-auto">
+            {courseList.map((course) => (
+              <label key={course.id} className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  checked={selectedCourses.includes(course.id)}
+                  onChange={() => handleToggleCourse(course.id)}
+                />
+                <span>{course.name}</span>
+              </label>
+            ))}
+          </div>
         </label>
 
         {/* Phone Number */}

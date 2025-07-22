@@ -3,6 +3,7 @@
 import React, { use } from "react";
 import { Course, courseList } from "@/modules/coursesModule";
 import { Student, studentList } from "@/modules/studentsModule";
+import { Teacher, teacherList } from "@/modules/teachersModule";
 
 type ParamsPromise = Promise<{ id: string }>;
 
@@ -26,6 +27,8 @@ export default function CourseDetailPage({ params }: Props) {
     course.enrolledStudents?.includes(student.id)
   );
 
+  const teacher: Teacher | undefined = teacherList.find((t) => t.id === course.teacherId);
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
       <h1 className="text-2xl font-bold text-gray-800 mb-4">Course Detail</h1>
@@ -36,6 +39,9 @@ export default function CourseDetailPage({ params }: Props) {
         </p>
         <p className="text-gray-600">
           <strong>End Date:</strong> {course.endDate}
+        </p>
+        <p className="text-gray-600">
+          <strong>Teacher:</strong> {teacher ? teacher.name : "Unknown"}
         </p>
 
         <div className="mt-4">

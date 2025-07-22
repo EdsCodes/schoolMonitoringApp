@@ -2,7 +2,7 @@ export type Student = {
   id: string;
   name: string;
   age: number;
-  course: string;
+  course: string[]; // ahora acepta múltiples cursos
   email: string;
   address: string;
   phoneNumber?: string;
@@ -15,7 +15,7 @@ export const studentList: Student[] = [
     age: 16,
     email: 'john.doe@example.com',
     address: '123 Main St, Springfield',
-    course: 'physics',
+    course: ['physics'],
     phoneNumber: '123-456-7890',
   },
   {
@@ -24,7 +24,7 @@ export const studentList: Student[] = [
     age: 17,
     email: 'ana.smith@example.com',
     address: '456 Elm St, Springfield',
-    course: 'mathematics',
+    course: ['mathematics'],
     phoneNumber: '123-456-7890',
   },
   {
@@ -33,7 +33,7 @@ export const studentList: Student[] = [
     age: 17,
     email: 'george.castro@example.com',
     address: '456 Elm St, Springfield',
-    course: 'mathematics',
+    course: ['mathematics'],
     phoneNumber: '123-456-7890',
   },
   {
@@ -42,7 +42,7 @@ export const studentList: Student[] = [
     age: 17,
     email: 'john.wick@example.com',
     address: '456 Elm St, Springfield',
-    course: 'physics',
+    course: ['physics'],
     phoneNumber: '123-456-7890',
   },
   {
@@ -51,7 +51,7 @@ export const studentList: Student[] = [
     age: 17,
     email: 'joseph.doe@example.com',
     address: '456 Elm St, Springfield',
-    course: 'mathematics',
+    course: ['mathematics'],
     phoneNumber: '123-456-7890',
   },
   {
@@ -60,7 +60,7 @@ export const studentList: Student[] = [
     age: 17,
     email: 'mary.roberts@example.com',
     address: '456 Elm St, Springfield',
-    course: 'physics',
+    course: ['physics'],
     phoneNumber: '123-456-7890',
   },
 ];
@@ -89,4 +89,3 @@ export const deleteStudent = (id: string): boolean => {
   }
   return false;
 };
-
